@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Seviyorum</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <canvas id="snow-canvas"></canvas>
+
+    <div class="glass-card">
+        
+        <div class="profile-container">
+            <div class="glow-effect"></div>
+            <img src="biz.png" 
+                 alt="Biz" 
+                 class="profile-img">
+            
+            <div class="heart-badge">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+
+        <div class="text-section">
+            <h1 class="romantic-title">Yavuz & İrem</h1>
+            <p class="subtitle">Sonsuza Dek Birlikte</p>
+        </div>
+
+        <div class="timer-wrapper">
+            <p class="timer-label">Birlikte Geçen Zaman</p>
+            <div id="timer" class="timer-grid">
+                </div>
+        </div>
+
+        <p class="romantic-note">
+            "Seninle yağan her kar tanesi, kalbime düşen bir mutluluk gibi. Soğuk havada içimi ısıtan tek şeysin. Seni seviyorum..."
+        </p>
+
+        <div class="music-player">
+            <div id="disk" class="disk-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="music-info">
+                <p class="song-name">Bizim Şarkımız</p>
+                <p class="song-status">Tıkla ve Dinle</p>
+            </div>
+            <button id="playBtn" class="play-btn">
+                <i class="fa-solid fa-play ml-1"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <audio id="audio" loop>
+        <source src="MyWayOfLife.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

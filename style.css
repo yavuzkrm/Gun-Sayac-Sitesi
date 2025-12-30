@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2574&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: brightness(0.4) blur(3px); /* Karanlık Efekti */
+}
+
+/* Kar Efekti Canvas */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Cam Efekti Kartı */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    max-width: 28rem;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Profil Fotoğrafı Alanı */
+.profile-container {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Arkadaki Parlama Efekti */
+.glow-effect {
+    position: absolute;
+    inset: -0.25rem;
+    background: linear-gradient(to right, #db2777, #9333ea);
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0.75;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.profile-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Küçük Kalp Rozeti */
+.heart-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    color: #ef4444;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    animation: heartbeat 1.5s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Yazı Alanları */
+.text-section {
+    margin-bottom: 0.5rem;
+}
+
+.romantic-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: #fbcfe8;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: #e5e7eb;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Romantik Not */
+.romantic-note {
+    font-style: italic;
+    font-size: 0.875rem;
+    color: #f3f4f6;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+}
+
+/* Sayaç Alanı */
+.timer-wrapper {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.timer-label {
+    font-size: 0.75rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.timer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-val {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.timer-unit {
+    font-size: 0.65rem;
+    color: #9ca3af;
+}
+
+/* Müzik Player */
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.disk-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #1f2937;
+    border: 2px solid #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.disk-icon i {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.music-info {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+}
+
+.song-name {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.song-status {
+    font-size: 0.65rem;
+    color: #9ca3af;
+}
+
+.play-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    color: #db2777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #fce7f3;
+}
+
+/* Animasyonlar */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+    animation: spin 8s linear infinite;
+}
