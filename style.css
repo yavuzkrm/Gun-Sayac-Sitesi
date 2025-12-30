@@ -26,7 +26,7 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -2;
-    filter: brightness(0.4) blur(3px); /* Karanlık Efekti */
+    filter: brightness(0.4) blur(1.5px); /* Karanlık Efekti + Blur */
 }
 
 /* Kar Efekti Canvas */
